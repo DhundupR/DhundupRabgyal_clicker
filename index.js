@@ -17,3 +17,21 @@ function clear_history(){
   entry = "Previous entries: ";
   document.getElementById("entries").innerHTML = entry;
 }
+
+let on = false;
+async function auto(){
+  if (on == false){
+    on = true;
+    for(let i =0; i < 10 ; i++){
+      count ++;
+      document.getElementById("count-el").innerHTML = count;
+      await sleep(20);
+    }
+  } else {
+    on = false;
+  }
+}
+
+function sleep(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
